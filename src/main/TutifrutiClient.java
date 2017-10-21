@@ -94,7 +94,7 @@ public class TutifrutiClient {
                             palabras = this.diccionario.get(categoria);
                         }
 
-                        for (int i = 0; i < cantPalabras && i < 1000; i++) {
+                        for (int i = 0; i < cantPalabras && i < 3000; i++) {
                             String palabra = obj.getPalabra(user, password, categoria);
                             palabras.add(palabra);
                         }
@@ -155,7 +155,7 @@ public class TutifrutiClient {
         }
 
         System.out.println(String.valueOf(palabrasEnCategoria.size())
-                + " palabras en categoría y "
+                + " palabras en categoría / "
                 + String.valueOf(palabrasPosibles.size())
                 + " palabras posibles");
 

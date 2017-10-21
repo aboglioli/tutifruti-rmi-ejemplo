@@ -5,6 +5,9 @@
  */
 package main;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author kiriost
@@ -25,6 +28,8 @@ public class Main {
     public static void jugar() {
         while (true) {
             System.out.println("");
+            System.out.println("JUGANDO");
+            
             String categoria = client.getCategoria();
             String letra = client.getLetra();
             
@@ -33,8 +38,13 @@ public class Main {
             String palabra = client.obtenerPalabra(categoria, letra);
             
             if(palabra == null) {
-                System.out.println("No se encontraron palabras");
-                continue;
+                try {
+                    System.out.println("No se encontraron palabras");
+                    Thread.sleep(10000);
+                    continue;
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
             }
             
             System.out.println("Enviando: " + palabra);
